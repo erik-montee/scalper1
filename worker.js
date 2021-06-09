@@ -4,12 +4,18 @@ const {Builder, By, Key, until} = require('selenium-webdriver');
 (async function example() {
     let driver = await new Builder().forBrowser('chrome').build();
     try {
-        let username = workerData[0];
-        let password = workerData[1];
-        let cvv = workerData[2];
-        let login = 'https://www.bestbuy.com/identity/signin?token=tid%3Ae4470626-c8ce-11eb-b407-0a588ff6653d';
-        let url = 'https://www.bestbuy.com/site/wowwee-fingerlings-baby-penguin-tux-multi/6361538.p?skuId=6361538';
-        let checkout = 'https://www.bestbuy.com/checkout/r/fast-track';
+        const username = workerData[0];
+        const password = workerData[1];
+        const cvv = workerData[2];
+
+        const login = process.env.LOGIN_URL;
+        const url = process.env.TARGET_URL;
+        const checkout = process.env.CHECKOUT_URL;
+
+        // const login = 'https://www.bestbuy.com/identity/signin?token=tid%3Ae4470626-c8ce-11eb-b407-0a588ff6653d';
+        // const url = 'https://www.bestbuy.com/site/wowwee-fingerlings-baby-penguin-tux-multi/6361538.p?skuId=6361538';
+        // const checkout = 'https://www.bestbuy.com/checkout/r/fast-track';
+
         //let url = 'https://www.bestbuy.com/site/nvidia-geforce-rtx-3070-ti-8gb-gddr6x-pci-express-4-0-graphics-card-dark-platinum-and-black/6465789.p?skuId=6465789';
         //let url = 'https://www.bestbuy.com/site/nvidia-geforce-rtx-3080-10gb-gddr6x-pci-express-4-0-graphics-card-titanium-and-black/6429440.p?skuId=6429440';
   

@@ -1,14 +1,16 @@
-const { Worker, isMainThread } = require('worker_threads');
+require('dotenv').config();
+const {Worker} = require('worker_threads');
 
 (async function example() {
-    let username = process.argv[2];
-    let password = process.argv[3];
-    let cvv = process.argv[4];
-    let numberOfThreads = process.argv[5];
-    for (i = 0; i < numberOfThreads; i++) {
-        originalArray = [username, password, cvv];
-        const worker = new Worker('./worker.js', { 
+    const username = process.env.USERNAME;
+    const password = process.env.PASSWORD;
+    const cvv = process.env.CVV;
+    const numberOfThreads = process.env.NUM_THREADS;
+
+    for (let i = 0; i < numberOfThreads; i++) {
+        const originalArray = [username, password, cvv];
+        new Worker('./worker.js', {
             workerData: originalArray
         });
-      } 
+    }
 })();
