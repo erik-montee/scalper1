@@ -1,0 +1,19 @@
+{
+  "name": "scalper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "bufferutil": "^4.0.3",
+    "selenium-webdriver": "^4.0.0-beta.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "erik",
+  "license": "ISC",
+  "optionalDependencies": {
+    "utf-8-validate": "^5.0.5"
+  }
+}
